@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <title>TDB</title>
+
+    <script>
+        window.onload = function () {
+
+            var options = {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Monthly Sales Comparison by Location"
+                },
+                axisY: {
+                    title: "Revenue (in Pound Sterling)",
+                    valueFormatString: "#0",
+                    includeZero: true,
+                    suffix: "K",
+                    prefix: "£"
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: toogleDataSeries
+                },
+                toolTip: {
+                    shared: true
+                },
+                data: [{
+                    type: "area",
+                    name: "London",
+                    markerSize: 5,
+                    showInLegend: true,
+                    xValueFormatString: "MMMM",
+                    yValueFormatString: "£#0K",
+                    dataPoints: [
+                        { x: new Date(2017, 0), y: 12 },
+                        { x: new Date(2017, 1), y: 15 },
+                        { x: new Date(2017, 2), y: 12 },
+                        { x: new Date(2017, 3), y: 17 },
+                        { x: new Date(2017, 4), y: 20 },
+                        { x: new Date(2017, 5), y: 21 },
+                        { x: new Date(2017, 6), y: 24 },
+                        { x: new Date(2017, 7), y: 19 },
+                        { x: new Date(2017, 8), y: 22 },
+                        { x: new Date(2017, 9), y: 25 },
+                        { x: new Date(2017, 10), y: 21 },
+                        { x: new Date(2017, 11), y: 19 }
+                    ]
+                }, {
+                    type: "area",
+                    name: "Manchester",
+                    markerSize: 5,
+                    showInLegend: true,
+                    yValueFormatString: "£#0K",
+                    dataPoints: [
+                        { x: new Date(2017, 0), y: 8 },
+                        { x: new Date(2017, 1), y: 12 },
+                        { x: new Date(2017, 2), y: 9 },
+                        { x: new Date(2017, 3), y: 11 },
+                        { x: new Date(2017, 4), y: 15 },
+                        { x: new Date(2017, 5), y: 12 },
+                        { x: new Date(2017, 6), y: 13 },
+                        { x: new Date(2017, 7), y: 9 },
+                        { x: new Date(2017, 8), y: 7 },
+                        { x: new Date(2017, 9), y: 14 },
+                        { x: new Date(2017, 10), y: 18 },
+                        { x: new Date(2017, 11), y: 14 }
+                    ]
+                }]
+            };
+            $("#chartContainer").CanvasJSChart(options);
+
+            function toogleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                } else {
+                    e.dataSeries.visible = true;
+                }
+                e.chart.render();
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="logo">
+            <img src="./images/vanguard-logo-white-l.png" alt="" width="100px">
+        </div>
+
+        <nav class="navbar">
+            <div class="leftContent">
+                <li style="color: rgb(197, 120, 65);">WELCOME</li>
+                <li>Elizabeth Stanton</li>
+            </div>
+
+            <div class="rightContent">
+                <li>Account</li>
+                <li>Grant</li>
+                <li>Contributions</li>
+                <li>Supports</li>
+                <li>Log out</li>
+            </div>
+        </nav>
+
+        <div class="secondNav">
+            <div class="upNav">
+                <h3>The Stanton Children's Education Fund</h3>
+                <svg width="36px" height="61px" viewBox="0 0 36 61" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                    <title>Path 2</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Vanguard_c1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" points="1 59 33 29.3192526 1 2">
+                        </polyline>
+                    </g>
+                </svg>
+            </div>
+
+            <p style="margin-left: 10px;">The Stanton VCIP Grant Funds</p>
+        </div>
+
+
+        <div class="counterUp">
+            <div class="counter-section">
+                <div style="color: black; font-weight: bold;">Available Balance</div>
+                <div class="counter-balance" style="color: rgb(47, 183, 207);">
+                    <div> $</div>
+                    <div class="count"> 1287327</div>
+                </div>
+            </div>
+
+            <div class="counter-section">
+                <div style="color: black;font-weight: bold;">Current Balance</div>
+                <div class="counter-balance" style="color: rgb(47, 183, 207);">
+                    <div> $</div>
+                    <div class="count"> 1321762</div>
+                </div>
+            </div>
+
+            <div class="counter-section">
+                <div style="color: black;font-weight: bold;">Graces Made</div>
+                <div class="counter-balance" style="color: rgb(47, 183, 207);">
+                    <div> $</div>
+                    <div class="count"> 139000</div>
+                </div>
+            </div>
+            <button>NEW</button>
+        </div>
+
+        <hr>
+
+        <!-- ****************Legacy And Activty START************************** -->
+
+        <div class="graphContent">
+            <div class="leftBox">
+                <p style="margin-left: 10px;font-weight: bolder; font-size: 25px;">Legacy Journey</p>
+                <div id="chartContainer"></div>
+            </div>
+            <div class="rightBox" style="color: blanchedalmond;">
+                <p style="margin-left: 10px;font-weight: bolder; font-size: 25px; color: black;">Activity</p>
+                <div class="activitySection">
+                    <div class="activityContent">
+                        <div class="activityAmt">
+                            <div>$154264</div>
+                            <div>15 Feb 2017</div>
+                        </div>
+                        <p style="color: black;font-size: 12px;">write Content</p>
+                    </div>
+                    <hr>
+                    <div class="activityContent">
+                        <div class="activityAmt" style="color: chocolate;">
+                            <div>$154264</div>
+                            <div>15 Feb 2017</div>
+                        </div>
+                        <p style="color: black;font-size: 12px;">write Content</p>
+
+                    </div>
+                    <hr>
+                    <div class="activityContent">
+                        <div class="activityAmt" style="color: black;">
+                            <div>$154264</div>
+                            <div>15 Feb 2017</div>
+                        </div>
+                        <p style="color: black;font-size: 12px;">write Content</p>
+
+                    </div>
+                    <hr>
+                    <div class="activityContent">
+                        <div class="activityAmt" style="color: black;">
+                            <div>$154264</div>
+                            <div>15 Feb 2017</div>
+                        </div>
+                        <p style="color: black;font-size: 12px;">write Content</p>
+                    </div>
+                    <hr>
+                    <div class="activityContent">
+                        <div class="activityAmt" style="color: rgb(21, 157, 211);">
+                            <div>$154264</div>
+                            <div>15 Feb 2017</div>
+                        </div>
+                        <p style="color: black;font-size: 12px;">write Content</p>
+                    </div>
+                    <hr>
+                    <p style="color: black;">Show more</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ****************Legacy And Activty  END************************** -->
+
+
+        <!-- *****************Investment Graph section Start ****************************-->
+
+
+        <div class="investmentBox">
+            <div class="investmentHeading">
+                <h2 style="color: black;">Investment Options</h2>
+                <p style="margin-top:10px;color: gray;">(Invest in 6 options)</p>
+            </div>
+
+            <div class="investmentGraph">
+                <div class="eachGraph">
+                    <img src="./images/graph-a.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;">+1542452</p>
+                    </div>
+                </div>
+
+                <div class="eachGraph">
+                    <img src="./images/graph-b.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;color: chocolate;">+1542452</p>
+                    </div>
+                </div>
+
+                <div class="eachGraph">
+                    <img src="./images/graph-c.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;">+1542452</p>
+                    </div>
+                </div>
+
+                <div class="eachGraph">
+                    <img src="./images/graph-a.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;color: chocolate;">+1542452</p>
+                    </div>
+                </div>
+
+                <div class="eachGraph">
+                    <img src="./images/graph-b.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;">+1542452</p>
+                    </div>
+                </div>
+
+                <div class="eachGraph">
+                    <img src="./images/graph-c.png" />
+                    <b>Short Term Bond</b>
+                    <div style="display: flex;color: rgb(21, 157, 211);">
+                        <p>$13</p>
+                        <p style="margin-left: 10px;">+1542452</p>
+                    </div>
+                </div>
+            </div>
+            <div class="investmentText">Lorem ipsum dolor sit amet</div>
+        </div>
+
+        <!-- *****************Investment Graph section END ****************************-->
+
+
+        <!-- *****************Grant Recommended section Start ****************************-->
+        <div class="recommendation">
+            <div class="recommendSection">
+
+                <h2 class="recommendLeft" style="color: black;">Grant Recommendations</h2>
+
+                <div class="recommendRight">
+
+                    <div class="filter">
+                        <svg width="36px" height="61px" viewBox="0 0 36 61" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+                            <title>Path 2</title>
+                            <desc>Created with Sketch.</desc>
+                            <defs></defs>
+                            <g id="Vanguard_c1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <polyline id="Path-2" stroke="#FFFFFF" stroke-width="3" points="1 59 33 29.3192526 1 2">
+                                </polyline>
+                            </g>
+                        </svg>
+                        <div>Filter by category</div>
+                    </div>
+
+                    <div class="search">
+                        <img src="./images/search-icon.png" alt="search">
+                        <div>Filter by category</div>
+                    </div>
+                </div>
+
+            </div>
+            <div style="color: rgb(9, 145, 150);font-size: 15px;margin-top: -8px; margin-left: 10px;">100% grant allocation</div>
+        </div>
+
+
+        <!-- *****************Grant Recommended section END ****************************-->
+
+
+        <!-- *****************Card section Start ****************************-->
+
+
+        <div class="cardSection">
+
+            <!-- *************COLUMN 1******************** -->
+            <div class="column1">
+
+                <!-- Card 1 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-1.jpg'); width: 100%;">
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-2.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-3.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-4.png'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardFooter" style="display: flex;">
+                        <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- *************COLUMN 2******************** -->
+
+            <div class="column2">
+
+                <!-- Card 1 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+
+
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-5.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-1.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-2.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardFooter" style="display: flex;">
+                        <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+            <!-- *************COLUMN 3******************** -->
+
+            <div class="column3">
+
+                <!-- Card 1 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-4.png'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">
+                            </div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-5.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div class="cardFooter" style="display: flex;">
+                            <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                            <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="singCard">
+                    <div class="barSection">
+                        <div class="barContent">
+                            <p>Some Content</p>
+                            <div>Every Year</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%"></div>
+                            <div>40%</div>
+                        </div>
+                    </div>
+                    <div class="imageSection" style="background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./images/card-1.jpg'); width: 100%;">
+
+                        <div class="imageContentHeader">
+                            <p>Content Here</p>
+                            <img src="./images/three-icons.png" alt="three-icons" />
+                        </div>
+                        <p>Some content</p>
+                        <button>Button</button>
+                        <h3>Name Of University</h3>
+                    </div>
+                    <div class="cardDescription">
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="dateContent">
+                                <img src="./images/twitter.png" />
+                                <div>12:47pm - 17jan2017</div>
+                            </div>
+                            <div class="cardContent">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo esse cumque nulla saepe,
+                                nobis
+                                optio accusantium illo voluptatem ipsa. Dolore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardFooter" style="display: flex;">
+                        <div style="background-color: crimson; color: white;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                        <div style="background-color: rgb(158, 155, 156); color: black;width: 50%;display: flex;justify-content: center;height: 45px;margin-top: 20px;padding-top: 10px;">Content Here</div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Card End -->
+
+        </div>
+
+        <!-- *****************Card section END ****************************-->
+
+    </div>
+
+
+    
+    <footer>
+        <img src="./images/footer-transparent.png" alt="pic2" />
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+        integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        $('.count').counterUp({
+            delay: 100,
+            time: 2000
+        })
+    </script>
+
+
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+
+</html>

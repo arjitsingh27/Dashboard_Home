@@ -1,0 +1,400 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("./images/malaysia-floods-l.jpg");
+    background-repeat: no-repeat;
+}
+
+.container{
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+
+.navbar{
+    display: flex;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+.secondNav{
+    /* border: 1px solid blue; */
+    padding-top: 10px;
+    height: 10vh;
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.secondNav p{
+    color: white;
+    font-size: 10px;
+}
+
+.upNav{
+    display: flex;
+    color: white;
+    margin-left: 10px;
+}
+
+.upNav > svg{
+    margin-top: 2px;
+    width: 20px;
+    height: 15px;
+    transform: rotate(90deg);
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+li{
+    list-style-type:none;
+}
+
+.leftContent{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    /* padding-left: 150px; */
+    /* padding-right: 50px; */
+    padding-top: 15px;
+    /* border: 1px solid red; */
+    color: rgb(145, 140, 140);
+    
+
+}
+.rightContent{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 45px;
+    padding-top: 15px;
+    color: rgb(145, 140, 140);
+    /* border: 1px solid red; */
+
+}
+.counterUp{
+    position: relative;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    border: 1px solid brown;
+    height: 15vh;
+    background-image: linear-gradient(white,white);
+}
+
+.counterUp > button{
+    position: absolute;
+    font-size: 10px;
+    top: 70px;
+    left: 10px;
+    border-style: none;
+    background-color: rgb(33, 155, 226);
+    color: white;
+    width: 50px;
+    border-radius: 40px;
+
+}
+
+
+.counter-section{
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 20px;
+    
+}
+.counter-balance{
+    display: flex;
+}
+
+
+/*****************Legacy And Activty START**************************  */
+
+.graphContent{
+    margin-top: -35px;
+    display: flex;
+    border-radius: 7px;
+    box-shadow: -1px 15px 30px -10px black;
+    background-color: white;
+}
+
+.leftBox{
+    width: 65%;
+    margin-top: 20px;
+}
+.rightBox{
+    width: 35%;
+    margin-top: 20px;
+
+}
+
+.rightBox p{
+    margin-left: 10px;
+}
+
+.activitySection{
+    margin-top: 25px;
+}
+
+.activityAmt{
+    display: flex;
+    color: rgb(21, 157, 211);
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+/* ************************************** */
+
+.investmentBox{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 7px;
+    box-shadow: -1px 15px 30px -10px black;
+    background-color: white;
+    
+
+}
+
+.investmentHeading{
+    display: flex;
+    width: 45%;
+    /* border: 1px solid red; */
+    justify-content: space-evenly;
+    /* color: white; */
+}
+
+.investmentGraph{
+    display: flex;
+    width: 100%;
+    margin: 0 10px 0 15px;
+
+    
+}
+
+.eachGraph{
+    /* border: 1px solid red; */
+
+}
+
+.eachGraph img{
+    width: 80%;
+
+}
+
+.investmentText{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ********************************************** */
+
+
+
+
+.recommendation{
+    /* color: red; */
+    /* border: 5px solid blue; */
+    height: 15vh;
+    margin-top: 20px;
+    border-radius: 7px;
+    box-shadow: -1px 15px 30px -10px black;
+    background-color: white;
+        
+    
+}
+
+.recommendSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 10px;
+
+
+}
+
+.recommendLeft{
+    width: 50%;
+    
+
+}
+
+.recommendRight{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+.filter , .search{
+    width: 40%;
+    border: 1px solid blue;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 30px;
+    background-color: rgb(9, 145, 150);
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+
+}
+
+
+
+/* ******************************** */
+.cardSection{
+    margin-top: 20px;
+    color: blueviolet;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.column1 , .column2 , .column3{
+    width: 30%;
+}
+
+
+.singCard{
+    margin-top: 20px;
+    border-radius: 7px;
+    box-shadow: -1px 15px 30px -10px black;
+    
+}
+
+
+.barSection{
+    display: flex;
+    background-color: rgb(105, 209, 105);
+    color: white;
+}
+
+.barContent{
+    width: 40%;
+    margin: 10px 0 10px 15px;
+    line-height: 5px;
+}
+
+.barContent p{
+    font-size: 12px;
+}
+
+.barContent div{
+    font-size: 15px;
+}
+
+.progress{
+    display: flex;
+    width: 60%;
+    margin-top: 15px;
+}
+
+
+.imageSection{
+    background-repeat: no-repeat;
+    color: white;
+    height:20vh ;
+    background-size: cover;
+}
+
+
+.imageContentHeader{
+    display: flex;
+
+}
+
+.imageSection > p{
+    font-size: 8px;
+    margin-left: 20px;
+    margin-top: -14px;
+}
+
+.imageSection > button{
+    margin-left: 20px;
+    font-size: 15px;
+    border-radius: 40px;
+    width: 25%;
+    border-style: none;
+    outline-style: none;
+    background-color: rgb(143, 146, 146);
+    color: white;
+    position: relative;
+    top: 25px;
+}
+
+.imageSection > h3{
+    margin-left: 20px;
+    font-size: 20px;
+    position: relative;
+    top: 29px;
+}
+
+.imageContentHeader p{
+    width: 50%;    
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+
+}
+
+.imageContentHeader img{
+    margin-top: 10px;
+    margin-left: 45px;
+    width: 25%;
+    height: 10%;
+
+}
+
+
+.dateContent{
+    display: flex;
+}
+
+.dateContent > img{
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-top: 25px;
+    height: fit-content;
+    background-size: cover;
+}
+
+.dateContent > div{
+    font-weight: bolder;
+    color: black;
+    position: relative;
+    left: 10px;
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+
+.cardContent{
+    margin-left: 10px;
+    font-size: 12px;
+    color: rgb(143, 140, 140);
+}
+
+footer{
+    position: relative;
+    top: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+}
+
